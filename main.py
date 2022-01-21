@@ -1,6 +1,7 @@
 import time
 import pandas as pd
 import math
+from stockdata import get_stock_symbol
 data = pd.read_csv('data.csv')
 print(data)
 sno = data['S No.'].max()
@@ -34,9 +35,6 @@ def getReco(sno):
                 recofor += s[x]
             else:
                 recofor =recofor + " " + s[x]
-
-
-            
         RecoDict['Reco For']=(recofor.replace(",",""))
         RecoDict['Target Price']=(int(s[s.index('Rs')+1].replace(':',"")))
         recoprovider = ''
@@ -53,6 +51,7 @@ def getReco(sno):
     
     
     data.to_csv('data.csv',index=False)
+
 
             
             
