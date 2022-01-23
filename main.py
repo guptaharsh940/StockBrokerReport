@@ -24,7 +24,7 @@ def getReco(sno):
     reco = list(RecoWebsiteScrape.titles)
     for item in reco:
         if reco[-1] == item and (item in data.values):
-            addSymboltoOld()
+            # addSymboltoOld()
             z = False
             continue
 
@@ -114,12 +114,12 @@ def addSymboltoOld():
         a = data['S No.'].loc[lambda x:x==float(i)].index
 
         # data.insert(a,'Symbol', compsym[i])
-        data.Symbol[a] = compsym[i]
+        data.loc[a,'Symbol'] = compsym[i]
         # data.loc[a,6] = compsym[i]
             
 def firsttrade(sno):
     global data
-    symbol = []
+    # symbol = []
     for i in list(sno):
         a = list(data['S No.'].loc[lambda x:x==float(i)].index)
         for y in a:
@@ -135,19 +135,51 @@ def firsttrade(sno):
                     data.loc[y,'Buy Date'] = date[0]
                     data.loc[y,'Buy Time'] = date[1]
                     data.loc[y,'Quantity'] = 1
+                    data.loc[y,'Status'] = 'Active'
                 elif data.iloc[y]['Action'] == 'Sell' or data.iloc[y]['Action'] == 'Reduce':
                     data.loc[y,'Sell Price'] = ltp
                     data.loc[y,'Sell Date'] = date[0]
                     data.loc[y,'Sell Time'] = date[1]
                     data.loc[y,'Quantity'] = -1
+                    data.loc[y,'Status'] = 'Active'
 
                 print(f'{i} - {sym} - {str(ltp)} - {date[0]} - {date[1]}')
             continue
             
 
-    print(symbol)    
+    # print(symbol)    
     # a = stockdata.get_stock_quote(symbol)
-    print(a)
+    # print(a)
+def tradecloser(sno):
+    global data
+    # symbol = []
+    for i in list(sno):
+        a = list(data['S No.'].loc[lambda x:x==float(i)].index)
+        for y in a:
+            if data.iloc[y]['Symbol'] == 'N/A':
+                continue
+            elif isinstance(data.iloc[y]['Symbol'],str):
+                sym = data.iloc[y]['Symbol']
+                quote = get_quote(sym)
+                ltp = convert_to_float(quote['data'][0]['lastPrice'])
+                date = quote['lastUpdateTime'].split()
+                if data.iloc[y]['Status'] == 'Completed':
+                    continue
+                elif data.iloc[y]['Action'] == 'Buy' or data.iloc[y]['Action'] == 'Add' or data.iloc[y]['Action'] == 'Hold':
+                    if data.iloc[y]['Buy Price'] < ltp:
+                        data.loc[y,'Sell Price'] = ltp
+                        data.loc[y,'Sell Date'] = date[0]
+                        data.loc[y,'Sell Time'] = date[1]
+                        data.loc[y,'Status'] = 'Completed'
+                elif data.iloc[y]['Action'] == 'Sell' or data.iloc[y]['Action'] == 'Reduce':
+                    if data.iloc[y]['Sell Price'] > ltp:
+                        data.loc[y,'Buy Price'] = ltp
+                        data.loc[y,'Buy Date'] = date[0]
+                        data.loc[y,'Buy Time'] = date[1]
+                        data.loc[y,'Status'] = 'Completed'
+
+                print(f'{i} - {sym} - {str(ltp)} - {date[0]} - {date[1]}')
+            continue
 
 def new_reco_procedure(sno):
     global data
@@ -165,22 +197,52 @@ def new_reco_procedure(sno):
     
     data.to_csv('data.csv',index=False)
 
-# z = True  
-# while True:
-#     while z== True:
-#         new_reco_procedure(sno)
-#     while z==False:
-#         import RecoWebsiteScrape
-#         reco = list(RecoWebsiteScrape.titles)
-#         for item in reco:
-#             if stockdata.marketstatus() == 'open':
-#                 print('Market Open')
-#             elif (item in data.values):
-#                 print('Sleeping')
-#                 time.sleep(5)
-#                 continue
-#             else:
-#                 z = True
+def tradecheck():
+    global data
+    checkfornan = data['Quantity'].isnull()
+    a=0
+    sno = set()
+    sno_to_check = set()
+    for x in checkfornan:
+        a=a+1
+        if x:
+            sno.add(a)
+        else:
+            sno_to_check.add(a)
+    firsttrade(sno)
+    tradecloser(sno_to_check)
 
-new_reco_procedure(sno)
+
+
+
+
+
+
+
+
+z = True  
+while True:
+    while z== True:
+        new_reco_procedure(sno)
+    while z==False:
+        import RecoWebsiteScrape
+        reco = list(RecoWebsiteScrape.titles)
+        for item in reco:
+            if stockdata.marketstatus() == 'close':
+                print('Market Closed')
+                time.sleep()
+            elif reco[-1] == item and (item in data.values):
+                print('Sleeping')
+                time.sleep(20)
+            elif reco[0] == item and (item in data.values):
+                addSymboltoOld()
+                tradecheck()
+                data.to_csv('data.csv',index=False)
+                continue
+            elif item in data.values:
+                continue
+            else:
+                z = True
+
+# new_reco_procedure(sno)
 # firsttrade({1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
