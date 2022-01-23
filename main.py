@@ -83,6 +83,8 @@ def getSymbol(sno):
         # print(companyname)
 
 def addSymboltoOld():
+    '''Checks for the old Recos to get the symbol and gets the S No. of them and gives that to getSymbol()
+    function and further adds them to the database'''
     global data
     sno = set()
     a = 0
@@ -113,8 +115,8 @@ def addSymboltoOld():
             
 
             
-# while True:
-getReco(sno)
+while True:
+    getReco(sno)
 # getSymbol({1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 # t = time.strftime("%H:%M:%S",time.localtime())
 # print(t)
