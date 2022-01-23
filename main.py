@@ -145,6 +145,7 @@ def firsttrade(sno):
             continue
             
 <<<<<<< HEAD
+<<<<<<< HEAD
     print(symbol)    
     # a = stockdata.get_stock_quote(symbol)
     print(a)
@@ -185,6 +186,8 @@ def new_reco_procedure(sno):
 new_reco_procedure(sno)
 # firsttrade({1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
 =======
+=======
+>>>>>>> b5b7cceb96e540bfb96ca9269948857bead17284
 while True:
     getReco(sno)
 # getSymbol({1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23})
