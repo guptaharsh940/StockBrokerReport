@@ -9,7 +9,7 @@ import time
 import subprocess as sub
 import threading
 
-data = None
+# data = None
 companysymbol = []
 # status = True
 timeout = 5
@@ -28,22 +28,25 @@ def run_server():
 
 def get_stock_symbol(clist):
     '''Takes Company Name List and add corresponding symbol to the list'''
-    global data
+    # global data
+    data = None
     global companysymbol
     global timeout
-    timeout = (len(clist) * 2) + 5
+    timeout = 5
     for name in clist:
     # print("I am here")
+        print(name)
         api_url = f'http://localhost:3000/nse/search_stocks?keyword={name}'
         try:
             data = requests.get(api_url).json()
+            timeout = timeout+2
         except:
             print("This didn't work")
             companysymbol.append('N/A')
             run_server()
             continue
             # pass
-        if len(data) == 0:
+        if data == None:
             print("Not found")
         else:
             for i in range (len(data)):
@@ -58,9 +61,42 @@ def get_stock_symbol(clist):
                     companysymbol.append(data[i]['symbol'])
                     print(data[i]['symbol'])
                     break
+        data = None
     
     print("This has ended")
     timeout = 1
+
+def get_stock_quote(symbol):
+    '''Gives the ltp and last update time using node server
+    Currently using nsepy library in the main file itself for this task'''
+    global nodepro
+    run_server()
+    # Adding all the symbols with "," seperation
+    a = ""
+    for sym in symbol:
+        
+        if a =="":
+            a = a + sym
+        else:
+            a = a + "," + sym
+    print(a)
+    url = f'http://localhost:3000/nse/get_multiple_quote_info?companyNames={a}'   
+    quotes = requests.get(url).json()
+    stock_ltp = []
+    stock_lastupdate = []
+    for x in quotes:
+        stock_ltp.append(x['data']['lastPrice'])
+        stock_lastupdate.append(x['lastUpdateTime'])
+    nodepro.kill()
+    return stock_ltp, stock_lastupdate
+    
+def timer(timeout,data):
+    timeout_start = time.time()
+    while True:
+        if time.time() > timeout_start + timeout and data == None:    
+            print("Timed Out as Stock not found")
+            nodepro.kill()
+            break
 
 def timecheck():
     global timeout
@@ -97,3 +133,11 @@ def start(a):
         datacollector.join()
         # get_data.join()
         return companysymbol
+
+def marketstatus():
+    global nodepro
+    run_server()
+    url = 'http://localhost:3000/get_market_status'
+    status = (requests.get(url).json())["status"]
+    nodepro.kill()
+    return status
