@@ -7,6 +7,7 @@ from sys import api_version
 import requests
 import time
 import subprocess as sub
+from subprocess import call
 import threading
 
 # data = None
@@ -20,7 +21,8 @@ def run_server():
     global nodepro
     print("This has started")
     try:
-        nodepro = sub.Popen('node "stock-market-india"')
+        nodepro = sub.Popen('node "stock-market-india"', shell=True)
+        # nodepro = call('node "stock-market-india"', shell=True)
     except:
         print("Server Timed Out")    
     

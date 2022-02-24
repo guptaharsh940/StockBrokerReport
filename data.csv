@@ -1,17 +1,17 @@
 S No.,Reco Full,Reco Date,Reco Time,Reco Provider,Reco For,Symbol,Action,Quantity,Target Price,Buy Price,Buy Date,Buy Time,Sell Price,Sell Date,Sell Time,Status
-1,"Sell Titan Company, target price Rs 1800:  HDFC Securities ",24-01-22,1.48.14,HDFC Securities,Titan Company,TITAN,Sell,-1.0,1800,,,,2525.0,21-Jan-22,16.00.00,Active
-2,"Hold ICICI Prudential, target price Rs 760:  Emkay Global",24-01-22,1.48.14,Emkay Global,ICICI Prudential,ICICIPRULI,Hold,1.0,760,578.5,21-Jan-22,16.00.00,,,,Active
-3,"Reduce Tata Elxsi, target price Rs 5900:  HDFC Securities ",24-01-22,1.48.14,HDFC Securities,Tata Elxsi,TATAELXSI,Reduce,-1.0,5900,,,,7280.0,21-Jan-22,16.00.00,Active
-4,"Sell Trent, target price Rs 850:  HDFC Securities",24-01-22,1.48.14,HDFC Securities,Trent,TRENT,Sell,-1.0,850,,,,1185.0,21-Jan-22,16.00.00,Active
-5,"Buy Britannia Industries, target price Rs 3710:  Kotak Securities",24-01-22,1.48.14,Kotak Securities,Britannia Industries,BRITANNIA,Buy,1.0,3710,3616.0,21-Jan-22,16.00.00,,,,Active
-6,"Add Hindustan Unilever, target price Rs 2500:  ICICI Securities ",24-01-22,1.48.14,ICICI Securities,Hindustan Unilever,HINDUNILVR,Add,1.0,2500,2330.0,21-Jan-22,16.00.00,,,,Active
-7,"Add Ceat, target price Rs 1273:  ICICI Securities ",24-01-22,1.48.14,ICICI Securities,Ceat,CEATLTD,Add,1.0,1273,1111.0,21-JAN-2022,16:00:00,,,,Active
-8,"Buy Bajaj Auto, target price Rs 3900:  LKP Securities ",24-01-22,1.48.14,LKP Securities,Bajaj Auto,BAJAJ-AUTO,Buy,1.0,3900,3430.05,21-Jan-22,16.00.00,,,,Active
-9,"Buy Coal India, target price Rs 171:  Kotak Securities",24-01-22,1.48.14,Kotak Securities,Coal India,COALINDIA,Buy,1.0,171,158.95,21-Jan-22,16.00.00,,,,Active
-10,"Buy Tata Communications, target price Rs 1680:  ICICI Securities ",24-01-22,1.48.14,ICICI Securities,Tata Communications,TATACOMM,Buy,1.0,1680,1377.5,21-Jan-22,16.00.00,,,,Active
-11,"Buy Bata India, target price Rs 2150:  Yes Securities ",24-01-22,1.48.14,Yes Securities,Bata India,BATAINDIA,Buy,1.0,2150,2030.0,21-Jan-22,16.00.00,,,,Active
-12,"Hold Asian Paints, target price Rs 3400:  ICICI Securities ",24-01-22,1.48.14,ICICI Securities,Asian Paints,ASIANPAINT,Hold,1.0,3400,3278.0,21-Jan-22,16.00.00,,,,Active
-13,"Buy Tata Steel, target price Rs 1240:  Kotak Securities",24-01-22,1.48.14,Kotak Securities,Tata Steel,TATASTEEL,Buy,1.0,1240,1169.1,21-Jan-22,16.00.00,,,,Active
-14,"Buy Sun Pharma Advanced Research Company, target price Rs 345:  Yes Securities ",24-01-22,1.48.14,Yes Securities,Sun Pharma Advanced Research Company,SPARC,Buy,1.0,345,321.75,21-Jan-22,16.00.00,,,,Active
-15,"Buy Antony Waste Handling Cell, target price Rs 406:  HDFC Securities ",24-01-22,1.48.14,HDFC Securities,Antony Waste Handling Cell,AWHCL,Buy,1.0,406,333.95,21-Jan-22,16.00.00,,,,Active
-16,"Buy Rallis India, target price Rs 350:  Anand Rathi ",24-01-22,1.48.14,Anand Rathi,Rallis India,RALLIS,Buy,1.0,350,269.5,21-Jan-22,16.00.00,,,,Active
+1,"Buy eClerx Services, target price Rs 2620:  Emkay Global ",24/02/2022,14:58:06,Emkay Global,eClerx Services,ECLERX,Buy,1,2620,2143.25,24-FEB-2022,14:57:23,,,,Active
+2,"Buy Navin Fluorine International, target price Rs 4905:  HDFC Securities ",24/02/2022,14:58:06,HDFC Securities,Navin Fluorine International,NAVINFLUOR,Buy,1,4905,3701.4,24-FEB-2022,14:57:23,,,,Active
+3,"Buy Firstsource Solutions, target price Rs 180:  Emkay Global",24/02/2022,14:58:06,Emkay Global,Firstsource Solutions,FSL,Buy,1,180,120.1,24-FEB-2022,14:57:23,,,,Active
+4,"Buy Route Mobile, target price Rs 2150:  Emkay Global",24/02/2022,14:58:06,Emkay Global,Route Mobile,ROUTE,Buy,1,2150,1401.5,24-FEB-2022,14:58:23,,,,Active
+5,"Accumulate Bata India, target price Rs 2135:  Geojit",24/02/2022,14:58:06,Geojit,Bata India,BATAINDIA,Accumulate,,2135,,,,,,,
+6,"Buy Mahindra & Mahindra, target price Rs 1000:  ICICI Direct ",24/02/2022,14:58:06,ICICI Direct,Mahindra & Mahindra,MAHEPC,Buy,1,1000,94.2,24-FEB-2022,14:58:23,,,,Active
+7,"Buy Oberoi Realty, target price Rs 965:  IIFL ",24/02/2022,14:58:06,IIFL,Oberoi Realty,OBEROIRLTY,Buy,1,965,866.6,24-FEB-2022,14:58:23,,,,Active
+8,"Add Sanofi India, target price Rs 8107:  ICICI Securities ",24/02/2022,14:58:06,ICICI Securities,Sanofi India,SANOFI,Add,1,8107,7184.9,24-FEB-2022,14:58:23,,,,Active
+9,"Buy Mahindra CIE Automotive, target price Rs 287:  ICICI Securities ",24/02/2022,14:58:06,ICICI Securities,Mahindra CIE Automotive,MAHINDCIE,Buy,1,287,187.2,24-FEB-2022,14:58:23,,,,Active
+10,"Buy Automotive Axles, target price Rs 1730:  ICICI Direct ",24/02/2022,14:58:06,ICICI Direct,Automotive Axles,AUTOAXLES,Buy,1,1730,1440.0,24-FEB-2022,14:58:23,,,,Active
+11,"Hold Mindtree, target price Rs 4300:  Emkay Global",24/02/2022,14:58:06,Emkay Global,Mindtree,MINDTREE,Hold,1,4300,3571.9,24-FEB-2022,14:58:23,,,,Active
+12,"Buy Persistent Systems, target price Rs 4600:  Emkay Global ",24/02/2022,14:58:06,Emkay Global,Persistent Systems,PERSISTENT,Buy,1,4600,3773.5,24-FEB-2022,14:58:23,,,,Active
+13,"Buy TTK Prestige, target price Rs 1050:  ICICI Securities ",24/02/2022,14:58:06,ICICI Securities,TTK Prestige,TTKPRESTIG,Buy,1,1050,784.5,24-FEB-2022,14:58:23,,,,Active
+14,"Buy Crompton Greaves Consumer Electricals, target price Rs 422:  IIFL ",24/02/2022,14:58:06,IIFL,Crompton Greaves Consumer Electricals,CROMPTON,Buy,1,422,405.0,24-FEB-2022,14:58:23,,,,Active
+15,"Add SRF, target price Rs 2675:  HDFC Securities ",24/02/2022,14:58:06,HDFC Securities,SRF,SRF,Add,1,2675,2280.0,24-FEB-2022,14:58:23,,,,Active
+16,"Buy DLF, target price Rs 357:  IIFL ",24/02/2022,14:58:06,IIFL,DLF,DLF,Buy,1,357,321.1,24-FEB-2022,14:58:23,,,,Active
