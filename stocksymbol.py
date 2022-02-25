@@ -121,6 +121,9 @@ def get_stocksymbol(comp):
         elif sorted_name.iloc[0,0] == 'Nifty 50':
             symbols.append("N/A")
         else:
-            symbols.append(sorted_name.iloc[0,1])
-       
+            symbols.append(sorted_name.iloc[0,1])   
+        print(sorted_name)
     return symbols
+
+a = input()
+print(get_stocksymbol([a]))
